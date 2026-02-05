@@ -75,13 +75,17 @@ async function main() {
   document.getElementById("stats").textContent =
     `${estacionesConDatos.size} estaciones · 3 contaminantes`;
 
+  // Render map section (geo + strip)
+  const pm25datos = getUltimaLectura(lecturas, "PM2.5", estacionMap);
+  await renderMapSection(pm25datos, estacionMap);
+
+  // Render freshness legend
+  renderLegend();
+
   // Render bar charts for each pollutant
   renderBarChart("chart-pm25", "PM2.5", lecturas, estacionMap);
   renderBarChart("chart-o3", "O3", lecturas, estacionMap);
   renderBarChart("chart-co", "CO", lecturas, estacionMap);
-
-  // Render freshness legend
-  renderLegend();
 
   // Populate station selector and render trend chart
   setupTendencia(estaciones, lecturas, estacionMap);
@@ -117,6 +121,8 @@ function getUltimaLectura(lecturas, param, estacionMap) {
         nombre: est?.nombre ?? `Est. ${l.estacion_id}`,
         label,
         red: est?.red ?? "",
+        lat: est?.lat,
+        lon: est?.lon,
         frescura,
       };
     })
@@ -276,6 +282,139 @@ function renderTendencia(estacionId, lecturas, estacionMap) {
         y: "valor",
         fill: "param",
         r: 3,
+      }),
+    ],
+  });
+
+  container.innerHTML = "";
+  container.appendChild(chart);
+}
+
+const MEXICO_TOPOJSON_URL =
+  "https://gist.githubusercontent.com/leenoah1/535b386ec5f5abdb2142258af395c388/raw/a045778d28609abc036f95702d6a44045ae7ca99/geo-data.json";
+
+async function renderMapSection(pm25datos, estacionMap) {
+  // Fetch Mexico TopoJSON
+  let mexico;
+  try {
+    const resp = await fetch(MEXICO_TOPOJSON_URL);
+    const topo = await resp.json();
+    mexico = topojson.feature(topo, topo.objects.MEX_adm1);
+  } catch (e) {
+    document.getElementById("chart-map").innerHTML =
+      '<p class="loading">Error cargando mapa</p>';
+    return;
+  }
+
+  renderGeoMap("chart-map", mexico, pm25datos);
+  renderStripMap("chart-strip", pm25datos);
+}
+
+function renderGeoMap(containerId, mexico, datos) {
+  const container = document.getElementById(containerId);
+  const width = container.clientWidth || 500;
+  const height = Math.round(width * 0.7);
+
+  // Merge station coords with PM2.5 readings
+  const points = datos.map((d) => ({
+    ...d,
+    r: Math.max(Math.sqrt(d.valor) * 1.8, 4),
+  }));
+
+  const chart = Plot.plot({
+    width,
+    height,
+    projection: {
+      type: "conic-conformal",
+      parallels: [17.5, 29.5],
+      rotate: [102, 0],
+      domain: mexico,
+    },
+    marks: [
+      Plot.geo(mexico, {
+        fill: "#f5f5f5",
+        stroke: "#d4d4d4",
+        strokeWidth: 0.5,
+      }),
+      Plot.dot(points, {
+        x: "lon",
+        y: "lat",
+        r: "r",
+        fill: (d) => fillForReading(d),
+        stroke: "#fafafa",
+        strokeWidth: 1,
+        tip: true,
+        title: (d) =>
+          `${d.nombre} (${d.red})\nPM2.5: ${d.valor} µg/m³\n${d.fecha} ${d.hora}:00`,
+      }),
+      Plot.text(
+        points.filter((d) => d.valor > 20),
+        {
+          x: "lon",
+          y: "lat",
+          text: (d) => `${Math.round(d.valor)}`,
+          dy: -12,
+          fontSize: 10,
+          fill: "#525252",
+        }
+      ),
+    ],
+  });
+
+  container.innerHTML = "";
+  container.appendChild(chart);
+}
+
+function renderStripMap(containerId, datos) {
+  const container = document.getElementById(containerId);
+  const width = container.clientWidth || 200;
+
+  // Sort by latitude (north to south)
+  const sorted = [...datos].sort((a, b) => {
+    const latA = a.lat ?? 0;
+    const latB = b.lat ?? 0;
+    return latB - latA;
+  });
+
+  const chart = Plot.plot({
+    width,
+    height: Math.max(sorted.length * 24, 200),
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 15,
+    marginBottom: 20,
+    x: {
+      label: "µg/m³",
+      grid: true,
+    },
+    y: {
+      label: null,
+      domain: sorted.map((d) => d.nombre),
+      axis: null,
+    },
+    marks: [
+      Plot.barX(sorted, {
+        x: "valor",
+        y: "nombre",
+        fill: (d) => fillForReading(d),
+        tip: true,
+        title: (d) =>
+          `${d.nombre}\n${d.valor} µg/m³\n${d.fecha} ${d.hora}:00`,
+      }),
+      Plot.text(sorted, {
+        x: 0,
+        y: "nombre",
+        text: "nombre",
+        textAnchor: "start",
+        dx: 4,
+        fill: "#fafafa",
+        fontSize: 9,
+        fontWeight: 700,
+      }),
+      Plot.ruleX([UMBRALES["PM2.5"].valor], {
+        stroke: "#a3a3a3",
+        strokeWidth: 1.5,
+        strokeDasharray: "4,3",
       }),
     ],
   });

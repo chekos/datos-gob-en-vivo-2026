@@ -178,6 +178,44 @@ footer li::before {
   content: "→ ";
 }
 
+/* === MAP ROW === */
+
+.map-row {
+  display: flex;
+  gap: 0;
+}
+
+.map-geo {
+  flex: 3;
+  min-width: 0;
+  border-right: 1px solid var(--gray-2);
+  padding-right: 0.75rem;
+}
+
+.map-strip {
+  flex: 1;
+  min-width: 0;
+  padding-left: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .map-row {
+    flex-direction: column;
+  }
+
+  .map-geo {
+    border-right: none;
+    border-bottom: 1px solid var(--gray-2);
+    padding-right: 0;
+    padding-bottom: 0.75rem;
+  }
+
+  .map-strip {
+    padding-left: 0;
+    padding-top: 0.75rem;
+  }
+}
+
 /* === FRESHNESS LEGEND === */
 
 .freshness-legend {

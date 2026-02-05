@@ -25,9 +25,18 @@
         </div>
     </section>
 
-    <section id="legend">
+    <section id="mapa">
+        <div class="section-header">Estaciones de monitoreo · PM2.5</div>
         <div class="section-body">
-            <div class="freshness-legend" id="freshness-legend"></div>
+            <div class="map-row">
+                <div class="map-geo chart-container" id="chart-map">
+                    <p class="loading">Cargando mapa...</p>
+                </div>
+                <div class="map-strip chart-container" id="chart-strip">
+                    <p class="loading">Cargando...</p>
+                </div>
+            </div>
+            <div class="freshness-legend" id="freshness-legend" style="margin-top: 0.75rem;"></div>
         </div>
     </section>
 
@@ -88,6 +97,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/dist/plot.umd.min.js"></script>
     <script src="js/dashboard.js"></script>
 </body>
