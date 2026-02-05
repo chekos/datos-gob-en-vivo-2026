@@ -3,45 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos Abiertos de México - En Vivo 2026</title>
+    <title>Calidad del Aire en México - SINAICA en vivo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Datos Abiertos de México</h1>
-        <p class="subtitle">Exploración en vivo de <a href="https://datos.gob.mx">datos.gob.mx</a></p>
+        <h1>Calidad del Aire en México</h1>
+        <p class="subtitle">Datos en tiempo real de <a href="https://sinaica.inecc.gob.mx/">SINAICA</a> · INECC</p>
         <p class="meta">
-            Un proyecto de <a href="https://tacosdedatos.com">tacos de datos</a> &middot; febrero 2026
+            Un proyecto de <a href="https://tacosdedatos.com">tacos de datos</a> · febrero 2026
         </p>
     </header>
 
-    <main>
-        <section id="intro">
-            <p>
-                México tiene un portal de datos abiertos con miles de datasets
-                publicados por dependencias del gobierno federal. En este proyecto
-                exploramos algunos de los más interesantes y los visualizamos
-                usando <a href="https://observablehq.com/plot/">Observable Plot</a>.
-            </p>
-        </section>
-
-        <!-- Las secciones de visualización se agregarán aquí -->
-        <section id="charts">
-            <div id="chart-1" class="chart-container">
-                <h2>Cargando visualizaciones...</h2>
+    <section id="status">
+        <div class="section-header">Última actualización</div>
+        <div class="section-body">
+            <div class="status-bar">
+                <span class="timestamp loading" id="timestamp">Cargando...</span>
+                <span id="stats"></span>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section id="legend">
+        <div class="section-body">
+            <div class="freshness-legend" id="freshness-legend"></div>
+        </div>
+    </section>
+
+    <section id="pm25">
+        <div class="section-header">PM2.5 · Partículas finas</div>
+        <div class="section-body">
+            <div class="chart-container" id="chart-pm25">
+                <p class="loading">Cargando datos...</p>
+            </div>
+            <p class="chart-note">Umbral NOM-025-SSA1-2014: 45 µg/m³ (promedio 24h)</p>
+        </div>
+    </section>
+
+    <section id="o3">
+        <div class="section-header">O3 · Ozono</div>
+        <div class="section-body">
+            <div class="chart-container" id="chart-o3">
+                <p class="loading">Cargando datos...</p>
+            </div>
+            <p class="chart-note">Umbral NOM-020-SSA1-2021: 0.070 ppm (promedio 8h)</p>
+        </div>
+    </section>
+
+    <section id="co">
+        <div class="section-header">CO · Monóxido de carbono</div>
+        <div class="section-body">
+            <div class="chart-container" id="chart-co">
+                <p class="loading">Cargando datos...</p>
+            </div>
+            <p class="chart-note">Umbral NOM-021-SSA1-1993: 11 ppm (promedio 8h)</p>
+        </div>
+    </section>
+
+    <section id="tendencia">
+        <div class="section-header">Tendencia 24h</div>
+        <div class="section-body">
+            <div style="margin-bottom: 0.75rem;">
+                <label for="estacion-select">Estación: </label>
+                <select id="estacion-select">
+                    <option value="">Cargando...</option>
+                </select>
+            </div>
+            <div class="chart-container" id="chart-tendencia">
+                <p class="loading">Selecciona una estación</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>
-            Datos: <a href="https://datos.gob.mx">Portal de Datos Abiertos de México</a> &middot;
-            Código: <a href="https://github.com/chekos/datos-gob-en-vivo-2026">GitHub</a>
-        </p>
+        <div class="section-header">Metodología</div>
+        <div class="section-body">
+            <ul>
+                <li>Datos del <a href="https://sinaica.inecc.gob.mx/">SINAICA</a> (INECC)</li>
+                <li>Actualización automática cada hora vía GitHub Actions</li>
+                <li>Código fuente: <a href="https://github.com/chekos/datos-gob-en-vivo-2026">GitHub</a></li>
+            </ul>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/dist/plot.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-    <script src="js/charts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/dist/plot.umd.min.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>

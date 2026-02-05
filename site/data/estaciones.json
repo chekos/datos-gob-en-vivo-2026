@@ -1,0 +1,22 @@
+[
+  {"id": 271, "nombre": "Xalostoc", "red": "Valle de México", "lat": 19.527, "lon": -99.087, "estado": "Edomex"},
+  {"id": 272, "nombre": "Merced", "red": "Valle de México", "lat": 19.425, "lon": -99.120, "estado": "CDMX"},
+  {"id": 274, "nombre": "Pedregal", "red": "Valle de México", "lat": 19.325, "lon": -99.204, "estado": "CDMX"},
+  {"id": 276, "nombre": "Tlalnepantla", "red": "Valle de México", "lat": 19.529, "lon": -99.205, "estado": "Edomex"},
+  {"id": 100, "nombre": "Obispado", "red": "Monterrey", "lat": 25.670, "lon": -100.340, "estado": "Nuevo León"},
+  {"id": 108, "nombre": "San Nicolás", "red": "Monterrey", "lat": 25.745, "lon": -100.285, "estado": "Nuevo León"},
+  {"id": 28, "nombre": "Las Águilas", "red": "Guadalajara", "lat": 20.632, "lon": -103.417, "estado": "Jalisco"},
+  {"id": 31, "nombre": "Centro", "red": "Guadalajara", "lat": 20.677, "lon": -103.347, "estado": "Jalisco"},
+  {"id": 68, "nombre": "Ninfas", "red": "Puebla", "lat": 19.060, "lon": -98.185, "estado": "Puebla"},
+  {"id": 259, "nombre": "Oxtotitlán", "red": "Toluca", "lat": 19.288, "lon": -99.686, "estado": "Edomex"},
+  {"id": 157, "nombre": "Centro QRO", "red": "Querétaro", "lat": 20.594, "lon": -100.392, "estado": "Querétaro"},
+  {"id": 188, "nombre": "La Mesa", "red": "Tijuana", "lat": 32.480, "lon": -117.000, "estado": "Baja California"},
+  {"id": 197, "nombre": "COBACH", "red": "Mexicali", "lat": 32.633, "lon": -115.468, "estado": "Baja California"},
+  {"id": 139, "nombre": "Chamizal", "red": "Juárez", "lat": 31.747, "lon": -106.455, "estado": "Chihuahua"},
+  {"id": 75, "nombre": "T-21 DIF León", "red": "León", "lat": 21.129, "lon": -101.670, "estado": "Guanajuato"},
+  {"id": 169, "nombre": "Mérida", "red": "Mérida", "lat": 20.981, "lon": -89.620, "estado": "Yucatán"},
+  {"id": 120, "nombre": "Aguascalientes", "red": "Aguascalientes", "lat": 21.880, "lon": -102.290, "estado": "Aguascalientes"},
+  {"id": 217, "nombre": "Irapuato", "red": "Irapuato", "lat": 20.683, "lon": -101.348, "estado": "Guanajuato"},
+  {"id": 180, "nombre": "Colomos", "red": "Guadalajara", "lat": 20.707, "lon": -103.390, "estado": "Jalisco"},
+  {"id": 47, "nombre": "Salamanca", "red": "Salamanca", "lat": 20.572, "lon": -101.193, "estado": "Guanajuato"}
+]
