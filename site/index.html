@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Abiertos de México - En Vivo 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Datos Abiertos de México</h1>
+        <p class="subtitle">Exploración en vivo de <a href="https://datos.gob.mx">datos.gob.mx</a></p>
+        <p class="meta">
+            Un proyecto de <a href="https://tacosdedatos.com">tacos de datos</a> &middot; febrero 2026
+        </p>
+    </header>
+
+    <main>
+        <section id="intro">
+            <p>
+                México tiene un portal de datos abiertos con miles de datasets
+                publicados por dependencias del gobierno federal. En este proyecto
+                exploramos algunos de los más interesantes y los visualizamos
+                usando <a href="https://observablehq.com/plot/">Observable Plot</a>.
+            </p>
+        </section>
+
+        <!-- Las secciones de visualización se agregarán aquí -->
+        <section id="charts">
+            <div id="chart-1" class="chart-container">
+                <h2>Cargando visualizaciones...</h2>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Datos: <a href="https://datos.gob.mx">Portal de Datos Abiertos de México</a> &middot;
+            Código: <a href="https://github.com/chekos/datos-gob-en-vivo-2026">GitHub</a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/dist/plot.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="js/charts.js"></script>
+</body>
+</html>
