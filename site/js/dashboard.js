@@ -318,7 +318,7 @@ function renderGeoMap(containerId, mexico, datos) {
   // Merge station coords with PM2.5 readings
   const points = datos.map((d) => ({
     ...d,
-    r: Math.max(Math.sqrt(d.valor) * 1.8, 4),
+    r: Math.max(Math.sqrt(d.valor) * 2.5, 6),
   }));
 
   const chart = Plot.plot({
@@ -332,9 +332,9 @@ function renderGeoMap(containerId, mexico, datos) {
     },
     marks: [
       Plot.geo(mexico, {
-        fill: "#f5f5f5",
-        stroke: "#d4d4d4",
-        strokeWidth: 0.5,
+        fill: "#e5e5e5",
+        stroke: "#a3a3a3",
+        strokeWidth: 0.75,
       }),
       Plot.dot(points, {
         x: "lon",
@@ -384,8 +384,9 @@ function renderStripMap(containerId, datos) {
     marginTop: 15,
     marginBottom: 20,
     x: {
-      label: "µg/m³",
+      label: null,
       grid: true,
+      ticks: 3,
     },
     y: {
       label: null,
