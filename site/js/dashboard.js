@@ -12,8 +12,8 @@ const FRESCO_MAX = 6;
 const TIBIO_MAX = 24;
 
 function getFrescura(fecha, hora) {
-  // Build a Date from the reading's fecha + hora (treat as UTC for simplicity)
-  const readingTime = new Date(`${fecha}T${String(hora).padStart(2, "0")}:00:00Z`);
+  // SINAICA hours are in local Mexican time (CST = UTC-6)
+  const readingTime = new Date(`${fecha}T${String(hora).padStart(2, "0")}:00:00-06:00`);
   const now = new Date();
   const diffH = (now - readingTime) / (1000 * 60 * 60);
   if (diffH <= FRESCO_MAX) return "fresco";
@@ -224,8 +224,8 @@ function renderTendencia(estacionId, lecturas, estacionMap) {
     .filter((l) => l.estacion_id === estacionId && l.valor !== null && l.valor >= 0)
     .map((l) => ({
       ...l,
-      // Create a proper timestamp for x-axis sorting across dates
-      timestamp: new Date(`${l.fecha}T${String(l.hora).padStart(2, "0")}:00:00Z`),
+      // SINAICA hours are in local Mexican time (CST = UTC-6)
+      timestamp: new Date(`${l.fecha}T${String(l.hora).padStart(2, "0")}:00:00-06:00`),
     }))
     .sort((a, b) => a.timestamp - b.timestamp);
 
