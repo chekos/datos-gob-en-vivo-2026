@@ -63,6 +63,52 @@ small, .meta {
   color: var(--gray-5);
 }
 
+/* === CTA === */
+
+.cta {
+  background: var(--fg);
+  color: var(--bg);
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.cta .section-body {
+  padding: 0.6rem 1rem;
+}
+
+.cta-link {
+  color: var(--bg);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.cta-link:hover {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* === INTRO === */
+
+#intro {
+  border: none;
+  margin-bottom: 0;
+}
+
+#intro .section-body {
+  padding: 0.75rem 0;
+}
+
+#intro p {
+  font-size: 0.9rem;
+  color: var(--gray-6);
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+#intro p:last-child {
+  margin-bottom: 0;
+}
+
 /* === LAYOUT SECTIONS === */
 
 header {
@@ -157,7 +203,7 @@ label {
   letter-spacing: 0.05em;
 }
 
-/* === METHODOLOGY === */
+/* === METHODOLOGY / FOOTER === */
 
 footer {
   border: var(--border);
@@ -170,12 +216,43 @@ footer ul {
 }
 
 footer li {
-  padding: 0.25rem 0;
+  padding: 0.3rem 0;
   font-size: 0.85rem;
+  line-height: 1.6;
 }
 
 footer li::before {
   content: "→ ";
+}
+
+.glossary {
+  display: grid;
+  gap: 0;
+}
+
+.glossary dt {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.glossary dt:first-child {
+  margin-top: 0;
+}
+
+.glossary dd {
+  font-size: 0.85rem;
+  color: var(--gray-6);
+  line-height: 1.6;
+  margin-left: 0;
+}
+
+.footer-credit {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--gray-5);
+  border-top: 1px solid var(--gray-2);
+  padding: 0.75rem 1rem;
 }
 
 /* === MAP ROW === */

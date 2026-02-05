@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <section class="cta">
+        <div class="section-body">
+            ¿Quieres aprender a construir algo así? Video y notas en
+            <a href="https://tacosdedatos.com?utm_source=datos-gob-en-vivo&utm_medium=dashboard&utm_campaign=sinaica" class="cta-link">Tacos de Datos</a>
+        </div>
+    </section>
+
     <header>
         <h1>Calidad del Aire en México</h1>
         <p class="subtitle">Datos en tiempo real de <a href="https://sinaica.inecc.gob.mx/">SINAICA</a> · INECC</p>
@@ -14,6 +21,24 @@
             Un proyecto de <a href="https://tacosdedatos.com">tacos de datos</a> · febrero 2026
         </p>
     </header>
+
+    <section id="intro">
+        <div class="section-body">
+            <p>
+                Este dashboard muestra la calidad del aire en 20 estaciones de monitoreo
+                de México, actualizándose automáticamente cada hora. Los datos provienen
+                del <strong>SINAICA</strong> (Sistema Nacional de Información de la Calidad
+                del Aire), operado por el INECC.
+            </p>
+            <p>
+                Se miden tres contaminantes clave: <strong>PM2.5</strong> (partículas finas
+                que penetran los pulmones), <strong>O3</strong> (ozono a nivel del suelo) y
+                <strong>CO</strong> (monóxido de carbono). Cada gráfica incluye una línea
+                punteada que marca el umbral de la norma oficial mexicana &mdash; por encima
+                de esa línea, la concentración se considera dañina para la salud.
+            </p>
+        </div>
+    </section>
 
     <section id="status">
         <div class="section-header">Última actualización</div>
@@ -86,13 +111,59 @@
     </section>
 
     <footer>
-        <div class="section-header">Metodología</div>
+        <div class="section-header">Glosario</div>
+        <div class="section-body">
+            <dl class="glossary">
+                <dt>PM2.5</dt>
+                <dd>Partículas menores a 2.5 micrómetros de diámetro. Son tan pequeñas
+                    que penetran profundamente en los pulmones y pueden entrar al
+                    torrente sanguíneo. Provienen de la combustión de vehículos,
+                    industria y quema de biomasa. Se miden en µg/m³ (microgramos por
+                    metro cúbico de aire).</dd>
+                <dt>O3 (Ozono)</dt>
+                <dd>A nivel del suelo, el ozono es un contaminante que irrita las vías
+                    respiratorias. Se forma cuando la luz solar reacciona con
+                    contaminantes de vehículos e industria. Es peor en tardes soleadas.
+                    Se mide en ppm (partes por millón).</dd>
+                <dt>CO (Monóxido de carbono)</dt>
+                <dd>Gas incoloro e inodoro producido por la combustión incompleta.
+                    En altas concentraciones reduce la capacidad de la sangre para
+                    transportar oxígeno. Se mide en ppm.</dd>
+                <dt>Umbral NOM</dt>
+                <dd>Las Normas Oficiales Mexicanas (NOM) establecen límites máximos
+                    de concentración para proteger la salud. La línea punteada en cada
+                    gráfica marca ese límite. Por encima de la línea, se considera
+                    que la calidad del aire es perjudicial.</dd>
+            </dl>
+        </div>
+
+        <div class="section-header">Notas metodológicas</div>
         <div class="section-body">
             <ul>
-                <li>Datos del <a href="https://sinaica.inecc.gob.mx/">SINAICA</a> (INECC)</li>
-                <li>Actualización automática cada hora vía GitHub Actions</li>
-                <li>Código fuente: <a href="https://github.com/chekos/datos-gob-en-vivo-2026">GitHub</a></li>
+                <li><strong>Fuente:</strong> <a href="https://sinaica.inecc.gob.mx/">SINAICA</a>,
+                    operado por el Instituto Nacional de Ecología y Cambio Climático
+                    (<a href="https://www.gob.mx/inecc">INECC</a>)</li>
+                <li><strong>Frecuencia:</strong> Los datos se actualizan cada hora
+                    mediante un proceso automático (GitHub Actions)</li>
+                <li><strong>Tipo de datos:</strong> Lecturas crudas (tiempo real,
+                    sin validar). Las estaciones pueden tener datos faltantes o
+                    intermitentes</li>
+                <li><strong>Frescura:</strong> Las barras negras son lecturas de las
+                    últimas 6 horas. Las grises son más antiguas (ver leyenda)</li>
+                <li><strong>Umbrales:</strong>
+                    PM2.5: 45 µg/m³ (<a href="https://www.dof.gob.mx/nota_detalle.php?codigo=5357042">NOM-025-SSA1-2014</a>) ·
+                    O3: 0.070 ppm (<a href="https://www.dof.gob.mx/nota_detalle.php?codigo=5633741">NOM-020-SSA1-2021</a>) ·
+                    CO: 11 ppm (NOM-021-SSA1-1993)</li>
+                <li><strong>Estaciones:</strong> 20 estaciones seleccionadas en 14 zonas
+                    metropolitanas. No todas las estaciones reportan datos cada hora</li>
+                <li><strong>Código fuente:</strong>
+                    <a href="https://github.com/chekos/datos-gob-en-vivo-2026">GitHub</a></li>
             </ul>
+        </div>
+
+        <div class="section-body footer-credit">
+            Creado con datos de SINAICA + Claude Code para
+            <a href="https://tacosdedatos.com">tacos de datos</a>
         </div>
     </footer>
 
