@@ -3,7 +3,7 @@
 ## Fuente
 
 - **Institución**: Secretaría de las Mujeres
-- **Dataset**: [Violencia contra las mujeres](https://www.datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e)
+- **Dataset**: [Violencia contra las mujeres](https://datos.gob.mx/dataset/violencia_contra_mujeres)
 - **Licencia**: Creative Commons Attribution 4.0
 
 ## Descripción
@@ -78,14 +78,14 @@ BC,1990,5.12,Baja California,1990-01-01
 
 | Recurso | URL |
 |---|---|
-| **Homicidios femeninos** | https://www.datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/620b4717-0552-422d-bd76-9aee32e98731/download/homicidios_femeninos.csv |
-| **Prevalencia general** | https://www.datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/5dcb59f8-bab8-41cf-9c8a-53b3ff3e3ada/download/violencia_prevalencia.csv |
-| **Violencia de pareja (vida)** | https://www.datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/f56adc44-025e-409e-bda2-9187ca7e2780/download/violencia_pareja.csv |
-| **Violencia de pareja (12 meses)** | https://www.datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/b7af399f-86c1-4182-8c4a-c1bace82de3b/download/violencia_12meses.csv |
-| **Cualquier agresor** | https://www.datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/367bcc8c-5b33-426e-8e7d-3e45cab3b862/download/violencia_cualquier_agresor.csv |
-| **Búsqueda de ayuda** | https://www.datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/b6cccc49-2e67-4e23-b720-68dcdc99e301/download/ayuda_violencia.csv |
-| **Por tipo de daño** | https://www.datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/ee26ab1c-90d2-4c50-90e1-207ed4dcd1d4/download/violencia_tipo.csv |
-| **Dataset completo** | https://www.datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e |
+| **Homicidios femeninos** | https://datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/620b4717-0552-422d-bd76-9aee32e98731/download/homicidios_femeninos.csv |
+| **Prevalencia general** | https://datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/5dcb59f8-bab8-41cf-9c8a-53b3ff3e3ada/download/violencia_prevalencia.csv |
+| **Violencia de pareja (vida)** | https://datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/f56adc44-025e-409e-bda2-9187ca7e2780/download/violencia_pareja.csv |
+| **Violencia de pareja (12 meses)** | https://datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/b7af399f-86c1-4182-8c4a-c1bace82de3b/download/violencia_12meses.csv |
+| **Cualquier agresor** | https://datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/367bcc8c-5b33-426e-8e7d-3e45cab3b862/download/violencia_cualquier_agresor.csv |
+| **Búsqueda de ayuda** | https://datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/b6cccc49-2e67-4e23-b720-68dcdc99e301/download/ayuda_violencia.csv |
+| **Por tipo de daño** | https://datos.gob.mx/dataset/2b519f50-200b-44e4-bfce-31cc43f4279e/resource/ee26ab1c-90d2-4c50-90e1-207ed4dcd1d4/download/violencia_tipo.csv |
+| **Dataset completo** | https://datos.gob.mx/dataset/violencia_contra_mujeres |
 
 ## Potencial de visualización
 

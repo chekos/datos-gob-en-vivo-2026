@@ -5,7 +5,8 @@
 - **Institución**: Instituto Nacional de Ecología y Cambio Climático (INECC), bajo SEMARNAT
 - **Sistema**: Sistema Nacional de Información de la Calidad del Aire (SINAICA)
 - **Portal**: https://sinaica.inecc.gob.mx/
-- **Datos.gob.mx**: [Mediciones de contaminantes del SINAICA](https://www.datos.gob.mx/busca/dataset/mediciones-de-contaminantes-del-sistema-nacional-de-informacion-de-la-calidad-del-aire)
+- **Datos.gob.mx**: [Calidad del aire - Equipos de medición](https://datos.gob.mx/dataset/calidad_aire_equipos_medicion) (el dataset SINAICA específico no tiene página propia en el portal; ver [nota sobre plataformas](./00-nota-sobre-plataformas-datos-gob-mx.md))
+- **Datos SINAICA**: [Portal de datos SINAICA](https://sinaica.inecc.gob.mx/data.php)
 
 ## Descripción
 

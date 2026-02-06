@@ -3,7 +3,7 @@
 ## Fuente
 
 - **Institución**: Secretaría de Turismo (SECTUR)
-- **Dataset**: [Ocupación hotelera en los 70 destinos principales monitoreados en DataTur](https://www.datos.gob.mx/dataset/a9782641-4c85-4a8d-ae53-91b6129f12f2)
+- **Dataset**: [Ocupación hotelera en los 70 destinos principales monitoreados en DataTur](https://datos.gob.mx/dataset/ocupacion_hotelera_70_destinos_principales_monitoreados_datatur)
 - **Licencia**: Creative Commons Attribution 4.0
 
 ## Descripción
@@ -58,7 +58,7 @@ anio,mes,tipo_centro,subtipo_centro,centro,categoria,cuartos_disponibles,cuartos
 | Recurso | URL |
 |---|---|
 | **Descarga CSV** | https://repodatos.atdt.gob.mx/s_turismo/ocupacion_hotelera/Base70centros.csv |
-| **Dataset completo** | https://www.datos.gob.mx/dataset/a9782641-4c85-4a8d-ae53-91b6129f12f2 |
+| **Dataset completo** | https://datos.gob.mx/dataset/ocupacion_hotelera_70_destinos_principales_monitoreados_datatur |
 
 ## Potencial de visualización
 

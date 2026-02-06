@@ -3,7 +3,7 @@
 ## Fuente
 
 - **Institución**: Secretaría General del Consejo Nacional de Población (CONAPO)
-- **Dataset**: [Proyecciones de población](https://www.datos.gob.mx/dataset/proyecciones-de-poblacion)
+- **Dataset**: [Proyecciones de población](https://datos.gob.mx/dataset/proyecciones-de-poblacion)
 - **Licencia**: Creative Commons Attribution 4.0
 
 ## Descripción
@@ -51,8 +51,7 @@ RENGLON,ANIO,ENTIDAD,CVE_GEO,SEXO,EV,ENTIDAD_FEDERATIVA,FECHA
 | Recurso | URL |
 |---|---|
 | **Descarga CSV** | https://repodatos.atdt.gob.mx/CONAPO/proyecciones/06_Esperanza_Vida_Nacer_1950_2070.csv |
-| **Página del recurso** | https://www.datos.gob.mx/dataset/proyecciones-de-poblacion/resource/dfdf2e5d-60c7-43ad-9935-ef64bd3ddc4a |
-| **Dataset completo** | https://www.datos.gob.mx/dataset/proyecciones-de-poblacion |
+| **Dataset completo** | https://datos.gob.mx/dataset/proyecciones-de-poblacion |
 
 ### Otros CSVs del mismo dataset
 

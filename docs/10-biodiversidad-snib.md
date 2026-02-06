@@ -72,9 +72,9 @@ Cada registro de espécimen/observación incluye campos siguiendo el estándar D
 | Recurso | URL |
 |---|---|
 | **Portal SNIB (consulta y descarga)** | https://www.snib.mx/ |
-| **Geoportal (consulta geográfica/SIG)** | http://geoportal.conabio.gob.mx/ |
+| **Geoinformación (consulta geográfica/SIG)** | https://www.biodiversidad.gob.mx/region/geoinformacion |
 | **EncicloVida (consulta por especie)** | https://enciclovida.mx/ |
-| **CONABIO en datos.gob.mx** | https://datos.gob.mx/busca/organization/fdb8d86a-129a-4f32-940c-f60508e83849 |
+| **CONABIO datos abiertos** | https://www.gob.mx/conabio (CONABIO no aparece en la plataforma nueva de datos.gob.mx; ver [nota](./00-nota-sobre-plataformas-datos-gob-mx.md)) |
 | **GitHub CONABIO** | https://github.com/CONABIO |
 | **Diccionario de datos** | https://www.snib.mx/ejemplares/docs/CONABIO-SNIB-DiccionarioDatosEjemplaresGeoportal-202311.pdf |
 

@@ -3,7 +3,7 @@
 ## Fuente
 
 - **Institución**: Secretaría General del Consejo Nacional de Población (CONAPO)
-- **Dataset**: [Salud sexual y reproductiva](https://www.datos.gob.mx/dataset/01c8b87d-f691-4983-b698-4234aa8f63a1)
+- **Dataset**: [Salud sexual y reproductiva](https://datos.gob.mx/dataset/salud_sexual_reproductiva)
 - **Licencia**: Creative Commons Attribution 4.0
 
 ## Descripción
@@ -77,11 +77,11 @@ Los archivos con desagregación sociodemográfica agregan columnas como:
 
 | Recurso | URL |
 |---|---|
-| **Prevalencia anticonceptiva 2009-2023** | https://repodatos.atdt.gob.mx/api_update/Dist_MEFSA_MEFU_2009_2023.csv |
-| **Características madres adolescentes** | https://repodatos.atdt.gob.mx/api_update/Caract_Mad_Pad_1990_2023.csv |
-| **Indicadores básicos SSyR 2023** | https://repodatos.atdt.gob.mx/api_update/IndicadoresBasicosSSyR_2023.csv |
-| **Planeación del embarazo** | https://repodatos.atdt.gob.mx/api_update/Planeacion_Embarazos_2009_2023.csv |
-| **Dataset completo (24 recursos)** | https://www.datos.gob.mx/dataset/01c8b87d-f691-4983-b698-4234aa8f63a1 |
+| **Prevalencia anticonceptiva 2009-2023** | https://repodatos.atdt.gob.mx/api_update/conapo/salud_sexual_reproductiva/Dist_MEFSA_MEFU_2009_2023.csv |
+| **Características madres adolescentes** | https://repodatos.atdt.gob.mx/api_update/conapo/salud_sexual_reproductiva/Caract_Mad_Pad_1990_2023.csv |
+| **Indicadores básicos SSyR 2023** | https://repodatos.atdt.gob.mx/api_update/conapo/salud_sexual_reproductiva/IndicadoresBasicosSSyR_2023.csv |
+| **Planeación del embarazo** | https://repodatos.atdt.gob.mx/api_update/conapo/salud_sexual_reproductiva/Planeacion_Embarazos_2009_2023.csv |
+| **Dataset completo (24 recursos)** | https://datos.gob.mx/dataset/salud_sexual_reproductiva |
 
 ## Potencial de visualización
 

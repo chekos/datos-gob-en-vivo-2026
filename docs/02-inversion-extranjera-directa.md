@@ -3,7 +3,7 @@
 ## Fuente
 
 - **Institución**: Secretaría de Economía (SE)
-- **Dataset**: [Inversión extranjera directa](https://www.datos.gob.mx/dataset/inversion_extranjera_directa)
+- **Dataset**: [Inversión extranjera directa](https://datos.gob.mx/dataset/inversion_extranjera_directa)
 - **Licencia**: Creative Commons Attribution 4.0
 
 ## Descripción
@@ -100,13 +100,13 @@ Aguascalientes,Alemania,2006,1,2006-03-01,1.5364600000000002
 |---|---|
 | Entidad × País | https://repodatos.atdt.gob.mx/s_economia/inversion_ext_directa/ied_entidad_pais_de_origen.csv |
 | Entidad × Sector | https://repodatos.atdt.gob.mx/all_data/secretaria_economia/6477759b-adbb-47fb-bf49-326f9c856627/ied_entidad_sector.csv |
-| Entidad × Tipo | https://www.datos.gob.mx/dataset/6477759b-adbb-47fb-bf49-326f9c856627/resource/be4aa7e1-d8b3-4663-b939-23bbb6970ac9/download/ied_entidad_tipo_de_inversion.csv |
-| País × Tipo | https://www.datos.gob.mx/dataset/6477759b-adbb-47fb-bf49-326f9c856627/resource/8e373c4f-38f3-4cd6-a260-9c3d9fccf607/download/ied_pais_de_origen_tipo.csv |
+| Entidad × Tipo | https://datos.gob.mx/dataset/6477759b-adbb-47fb-bf49-326f9c856627/resource/be4aa7e1-d8b3-4663-b939-23bbb6970ac9/download/ied_entidad_tipo_de_inversion.csv |
+| País × Tipo | https://datos.gob.mx/dataset/6477759b-adbb-47fb-bf49-326f9c856627/resource/8e373c4f-38f3-4cd6-a260-9c3d9fccf607/download/ied_pais_de_origen_tipo.csv |
 | País × Sector | https://repodatos.atdt.gob.mx/all_data/secretaria_economia/6477759b-adbb-47fb-bf49-326f9c856627/ied_pais_de_origen_sector.csv |
 
-También disponible vía CKAN Datastore API:
+También disponible vía CKAN Datastore API (plataforma anterior, ver [nota](./00-nota-sobre-plataformas-datos-gob-mx.md)):
 ```
-https://www.datos.gob.mx/api/3/action/datastore_search?resource_id={resource_id}
+https://datos.gob.mx/api/3/action/datastore_search?resource_id={resource_id}
 ```
 
 ## Potencial de visualización

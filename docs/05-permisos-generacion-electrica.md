@@ -3,7 +3,7 @@
 ## Fuente
 
 - **Institución**: Comisión Nacional de Energía (CNE)
-- **Dataset**: [Permisos otorgados de generación de energía eléctrica](https://www.datos.gob.mx/dataset/a0cc9baf-bd9b-43d2-9fc5-0d322690f920)
+- **Dataset**: [Permisos otorgados de generación de energía eléctrica](https://datos.gob.mx/dataset/permisos_otorgados_generacion_energia_electrica)
 - **Licencia**: Creative Commons Attribution 4.0
 
 ## Descripción
@@ -65,8 +65,8 @@ E/001/AUT/2001,Ingenio El Potrero,AUT.,2001-03-15,49.3,157.0,59.16,...,Bagazo de
 
 | Recurso | URL |
 |---|---|
-| **Descarga CSV** | https://repodatos.atdt.gob.mx/api_update/cne/permisos_otargados_generacion_energia_electrica/01_permisos_generacion.csv |
-| **Dataset completo** | https://www.datos.gob.mx/dataset/a0cc9baf-bd9b-43d2-9fc5-0d322690f920 |
+| **Descarga CSV** | https://repodatos.atdt.gob.mx/api_update/cne/permisos_otorgados_generacion_energia_electrica/01_permisos_generacion.csv |
+| **Dataset completo** | https://datos.gob.mx/dataset/permisos_otorgados_generacion_energia_electrica |
 
 ## Potencial de visualización
 

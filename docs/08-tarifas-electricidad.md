@@ -3,7 +3,7 @@
 ## Fuente
 
 - **Institución**: Comisión Nacional de Energía (CNE)
-- **Dataset**: [Tarifas finales del suministro básico](https://www.datos.gob.mx/dataset/tarifas_finales_suministro_basico)
+- **Dataset**: [Tarifas finales del suministro básico](https://datos.gob.mx/dataset/tarifas_finales_suministro_basico)
 - **Licencia**: Creative Commons Attribution 4.0
 
 ## Descripción
@@ -72,7 +72,7 @@ anio,mes,tarifa,descripcion,int_horario,cargo,unidades,region,transmision,distri
 | Recurso | URL |
 |---|---|
 | **Descarga CSV** | https://repodatos.atdt.gob.mx/api_update/cne/tarifas_finales_suministro_basico/02_tarifas_finales_suministro_basico.csv |
-| **Dataset completo** | https://www.datos.gob.mx/dataset/tarifas_finales_suministro_basico |
+| **Dataset completo** | https://datos.gob.mx/dataset/tarifas_finales_suministro_basico |
 
 ## Potencial de visualización
 

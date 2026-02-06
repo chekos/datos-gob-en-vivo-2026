@@ -3,7 +3,7 @@
 ## Fuente
 
 - **Institución**: Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública (SESNSP)
-- **Dataset**: [Incidencia delictiva](https://www.datos.gob.mx/dataset/5c0d5419-d22e-482f-973e-af843b9e06f4)
+- **Dataset**: [Incidencia delictiva](https://datos.gob.mx/dataset/incidencia_delictiva)
 - **Licencia**: Creative Commons Attribution 4.0
 
 ## Descripción
@@ -83,7 +83,7 @@ Aguascalientes,La vida y la Integridad corporal,Homicidio,Homicidio doloso,Con a
 | **Estatal** | https://repodatos.atdt.gob.mx/api_update/sesnsp/incidencia_delictiva/INM_estatal_nov25.csv |
 | **Municipal** | https://repodatos.atdt.gob.mx/api_update/sesnsp/incidencia_delictiva/IDM_NM_nov25.csv |
 | **Víctimas** | https://repodatos.atdt.gob.mx/api_update/sesnsp/incidencia_delictiva/IDVFC_NM_nov25.csv |
-| **Dataset completo** | https://www.datos.gob.mx/dataset/5c0d5419-d22e-482f-973e-af843b9e06f4 |
+| **Dataset completo** | https://datos.gob.mx/dataset/incidencia_delictiva |
 | **Portal SESNSP** | https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva |
 
 ## Potencial de visualización
