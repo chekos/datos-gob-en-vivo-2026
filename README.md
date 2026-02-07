@@ -46,6 +46,12 @@ Datos trimestrales de la Secretaría de Economía (2006–2024) sobre inversión
 
 ## Cómo usar
 
+### Instalar uv
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
 ### Generar datos
 
 ```bash
