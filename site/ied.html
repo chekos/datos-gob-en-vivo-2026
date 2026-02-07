@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inversión Extranjera Directa en México - datos.gob.mx</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="cta">
+        <div class="section-body">
+            ¿Quieres aprender a construir algo así? Video y notas en
+            <a href="https://tacosdedatos.com?utm_source=datos-gob-en-vivo&utm_medium=dashboard&utm_campaign=ied" class="cta-link">Tacos de Datos</a>
+        </div>
+    </section>
+
+    <header>
+        <h1>Inversión Extranjera Directa en México</h1>
+        <p class="subtitle">Datos históricos de la <a href="https://www.gob.mx/se">Secretaría de Economía</a> · 2006–2024</p>
+        <p class="meta">
+            Un proyecto de <a href="https://tacosdedatos.com">tacos de datos</a> · febrero 2026
+        </p>
+        <p class="meta"><a href="index.html">← Ver dashboard de Calidad del Aire (SINAICA)</a></p>
+    </header>
+
+    <section id="intro">
+        <div class="section-body">
+            <p>
+                Este dashboard muestra la Inversión Extranjera Directa (IED) en México
+                por entidad federativa, país de origen y sector económico. Los datos
+                provienen del registro de la <strong>Secretaría de Economía</strong>,
+                publicados en <a href="https://datos.gob.mx">datos.gob.mx</a>, y cubren
+                el periodo 2006–2024 con desagregación trimestral.
+            </p>
+            <p>
+                La IED mide los flujos de capital que empresas extranjeras invierten
+                en actividades productivas en México. Valores negativos representan
+                <strong>desinversiones</strong> (retiro de capital). Los montos se
+                expresan en <strong>millones de dólares</strong>.
+            </p>
+        </div>
+    </section>
+
+    <section id="status" class="sticky-controls">
+        <div class="section-header">Datos cargados</div>
+        <div class="section-body">
+            <div class="status-bar">
+                <span>
+                    <label for="anio-select">Año: </label>
+                    <select id="anio-select">
+                        <option value="">Cargando...</option>
+                    </select>
+                </span>
+                <span class="timestamp" id="ied-status">Cargando datos...</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="mapa-ied">
+        <div class="section-header">IED por entidad federativa</div>
+        <div class="section-body">
+            <div class="map-row">
+                <div class="map-geo chart-container" id="chart-choropleth">
+                    <p class="loading">Cargando mapa...</p>
+                </div>
+                <div class="map-strip chart-container" id="chart-top10">
+                    <p class="loading">Cargando...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="heatmap-ied">
+        <div class="section-header">Distribución por país de origen e industria</div>
+        <div class="section-body">
+            <div class="tab-bar">
+                <button class="tab-btn active" data-tab="pais">Por país de origen</button>
+                <button class="tab-btn" data-tab="sector">Top industrias</button>
+            </div>
+            <div class="chart-container" id="chart-heatmap">
+                <p class="loading">Cargando...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sankey-ied">
+        <div class="section-header">Flujos de inversión · País → Entidad → Sector</div>
+        <div class="section-body">
+            <div class="chart-container" id="chart-sankey">
+                <p class="loading">Cargando...</p>
+            </div>
+            <p class="chart-note">
+                Nota: Los flujos país→entidad y entidad→sector provienen de agregaciones
+                separadas (no existe un cruce directo país×entidad×sector en los datos fuente).
+                Valores negativos (desinversiones) se excluyen del diagrama Sankey.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section-header">Glosario</div>
+        <div class="section-body">
+            <dl class="glossary">
+                <dt>IED</dt>
+                <dd>Inversión Extranjera Directa: capital que empresas extranjeras
+                    destinan a actividades productivas en México (creación o expansión
+                    de empresas, adquisiciones, reinversión de utilidades, etc.).</dd>
+                <dt>Desinversión</dt>
+                <dd>Valores negativos que representan retiro de capital extranjero.
+                    Puede ser por cierre de operaciones, venta de participación a
+                    inversionistas nacionales, o repatriación de capital.</dd>
+                <dt>Millones de USD</dt>
+                <dd>Todos los montos se expresan en millones de dólares estadounidenses,
+                    según el registro de la Secretaría de Economía.</dd>
+                <dt>Datos confidenciales</dt>
+                <dd>Algunos valores sectoriales se reportan como "C" (confidencial)
+                    para proteger información de empresas individuales. Estos se
+                    tratan como cero en las visualizaciones.</dd>
+            </dl>
+        </div>
+
+        <div class="section-header">Notas metodológicas</div>
+        <div class="section-body">
+            <ul>
+                <li><strong>Fuente:</strong> <a href="https://datos.gob.mx/busca/dataset/informacion-estadistica-de-la-inversion-extranjera-directa">Secretaría de Economía vía datos.gob.mx</a></li>
+                <li><strong>Periodo:</strong> 2006–2024, datos trimestrales agregados a nivel anual</li>
+                <li><strong>Sectores:</strong> Se muestran solo sectores de nivel superior
+                    (códigos de 2 dígitos del SCIAN), no subsectores ni ramas</li>
+                <li><strong>Entidades:</strong> Los nombres de "Ciudad de Mexico" y
+                    "Estado de Mexico" se mapean a "Distrito Federal" y "Mexico"
+                    respectivamente para compatibilidad con el mapa TopoJSON</li>
+                <li><strong>Código fuente:</strong>
+                    <a href="https://github.com/chekos/datos-gob-en-vivo-2026">GitHub</a></li>
+            </ul>
+        </div>
+
+        <div class="section-body footer-credit">
+            Creado con datos de la Secretaría de Economía + Claude Code para
+            <a href="https://tacosdedatos.com">tacos de datos</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/dist/plot.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12/dist/d3-sankey.min.js"></script>
+    <script src="js/ied.js"></script>
+</body>
+</html>

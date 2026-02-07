@@ -149,6 +149,10 @@ section {
   overflow-x: auto;
 }
 
+#chart-heatmap {
+  overflow: visible;
+}
+
 .chart-container svg {
   font-family: var(--font-mono) !important;
 }
@@ -162,6 +166,13 @@ section {
 }
 
 /* === STATUS BAR === */
+
+.sticky-controls {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+}
 
 .status-bar {
   display: flex;
@@ -313,6 +324,42 @@ footer li::before {
   width: 12px;
   height: 12px;
   border: 1px solid var(--gray-4);
+}
+
+/* === TAB BAR === */
+
+.tab-bar {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1rem;
+  border: var(--border);
+}
+
+.tab-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-right: var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  cursor: pointer;
+}
+
+.tab-btn:last-child {
+  border-right: none;
+}
+
+.tab-btn:hover {
+  background: var(--gray-2);
+}
+
+.tab-btn.active {
+  background: var(--fg);
+  color: var(--bg);
 }
 
 /* === LOADING === */
