@@ -65,7 +65,7 @@ uv run scripts/fetch_ied.py
 ### Ver el sitio localmente
 
 ```bash
-cd site && python -m http.server 8000
+uv run python -m http.server 8000 --directory site
 # Abrir http://localhost:8000 (SINAICA) o http://localhost:8000/ied.html (IED)
 ```
 
