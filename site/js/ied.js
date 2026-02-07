@@ -443,12 +443,13 @@ function renderSankey(anio) {
   const { nodes, links } = sankeyLayout(sankeyData);
 
   // Create SVG
-  const svg = d3.create("svg").attr("viewBox", [0, 0, width, height]);
+  const svg = d3.create("svg")
+    .attr("viewBox", [0, 0, width, height])
+    .style("cursor", "default");
 
   // Links
-  svg
-    .append("g")
-    .attr("fill", "none")
+  const linkG = svg.append("g").attr("fill", "none");
+  const linkPaths = linkG
     .selectAll("path")
     .data(links)
     .join("path")
@@ -456,6 +457,8 @@ function renderSankey(anio) {
     .attr("stroke", "#d4d4d4")
     .attr("stroke-opacity", 0.6)
     .attr("stroke-width", (d) => Math.max(1, d.width))
+    .style("transition", "stroke 0.2s, stroke-opacity 0.2s");
+  linkPaths
     .append("title")
     .text(
       (d) =>
@@ -463,8 +466,8 @@ function renderSankey(anio) {
     );
 
   // Nodes
-  svg
-    .append("g")
+  const nodeG = svg.append("g");
+  const nodeRects = nodeG
     .selectAll("rect")
     .data(nodes)
     .join("rect")
@@ -473,6 +476,9 @@ function renderSankey(anio) {
     .attr("height", (d) => Math.max(d.y1 - d.y0, 1))
     .attr("width", (d) => d.x1 - d.x0)
     .attr("fill", "#1a1a1a")
+    .style("cursor", "pointer")
+    .style("transition", "opacity 0.2s");
+  nodeRects
     .append("title")
     .text(
       (d) =>
@@ -480,10 +486,10 @@ function renderSankey(anio) {
     );
 
   // Labels
-  svg
-    .append("g")
+  const labelG = svg.append("g")
     .style("font-family", "'SF Mono', 'Fira Code', monospace")
-    .style("font-size", "10px")
+    .style("font-size", "10px");
+  const labelTexts = labelG
     .selectAll("text")
     .data(nodes)
     .join("text")
@@ -491,7 +497,84 @@ function renderSankey(anio) {
     .attr("y", (d) => (d.y1 + d.y0) / 2)
     .attr("dy", "0.35em")
     .attr("text-anchor", (d) => (d.x0 < width / 2 ? "start" : "end"))
+    .style("transition", "opacity 0.2s")
     .text((d) => d.name.replace(/^País: /, ""));
+
+  // Click-to-highlight interaction
+  let activeNode = null;
+
+  function highlight(node) {
+    activeNode = node;
+
+    const activeLinks = new Set();
+    const activeNodes = new Set([node]);
+
+    // Determine node column by depth (0=country, 1=entidad, 2=sector)
+    const depth = node.depth;
+
+    if (depth === 0) {
+      // Country: forward only → entidades → sectors
+      const entidades = new Set();
+      links.forEach((l) => {
+        if (l.source === node) { activeLinks.add(l); entidades.add(l.target); }
+      });
+      entidades.forEach((ent) => {
+        activeNodes.add(ent);
+        links.forEach((l) => {
+          if (l.source === ent) { activeLinks.add(l); activeNodes.add(l.target); }
+        });
+      });
+    } else if (depth === 2) {
+      // Sector: backward only → entidades → countries
+      const entidades = new Set();
+      links.forEach((l) => {
+        if (l.target === node) { activeLinks.add(l); entidades.add(l.source); }
+      });
+      entidades.forEach((ent) => {
+        activeNodes.add(ent);
+        links.forEach((l) => {
+          if (l.target === ent) { activeLinks.add(l); activeNodes.add(l.source); }
+        });
+      });
+    } else {
+      // Entidad (middle): both directions
+      links.forEach((l) => {
+        if (l.source === node || l.target === node) {
+          activeLinks.add(l);
+          activeNodes.add(l.source);
+          activeNodes.add(l.target);
+        }
+      });
+    }
+
+    linkPaths
+      .attr("stroke", (d) => (activeLinks.has(d) ? "#525252" : "#d4d4d4"))
+      .attr("stroke-opacity", (d) => (activeLinks.has(d) ? 0.7 : 0.15));
+    nodeRects
+      .style("opacity", (d) => (activeNodes.has(d) ? 1 : 0.3));
+    labelTexts
+      .style("opacity", (d) => (activeNodes.has(d) ? 1 : 0.3))
+      .style("font-weight", (d) => (d === node ? 700 : 400));
+  }
+
+  function resetHighlight() {
+    activeNode = null;
+    linkPaths.attr("stroke", "#d4d4d4").attr("stroke-opacity", 0.6);
+    nodeRects.style("opacity", 1);
+    labelTexts.style("opacity", 1).style("font-weight", 400);
+  }
+
+  nodeRects.on("click", (event, d) => {
+    event.stopPropagation();
+    if (activeNode === d) {
+      resetHighlight();
+    } else {
+      highlight(d);
+    }
+  });
+
+  // Click on background to reset
+  svg.on("click", () => resetHighlight());
 
   container.innerHTML = "";
   container.appendChild(svg.node());
