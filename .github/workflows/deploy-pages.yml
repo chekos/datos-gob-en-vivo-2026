@@ -27,21 +27,22 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/cache@v4
+      - uses: actions/checkout@v7.0.0
+      - uses: actions/cache@v6.1.0
         with:
           path: site/data/sinaica.json
           key: sinaica-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
             sinaica-
-      - uses: astral-sh/setup-uv@v5
+      - uses: astral-sh/setup-uv@v8.2.0
         with:
           enable-cache: true
+          cache-dependency-glob: scripts/fetch_sinaica.py
       - name: Fetch live SINAICA data for artifact
         run: uv run scripts/fetch_sinaica.py
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@v6.0.0
+      - uses: actions/upload-pages-artifact@v5.0.0
         with:
           path: site
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5.0.0
