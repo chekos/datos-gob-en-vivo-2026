@@ -8,7 +8,7 @@ Proyecto creado en vivo para [tacos de datos](https://tacosdedatos.com).
 
 ### Calidad del Aire (SINAICA)
 
-Datos en tiempo real de 20 estaciones de monitoreo del [SINAICA](https://sinaica.inecc.gob.mx/) (INECC). Se miden PM2.5, O3 y CO con umbrales de las normas oficiales mexicanas. Se actualiza automáticamente cada hora via GitHub Actions.
+Datos en tiempo real de 20 estaciones de monitoreo del [SINAICA](https://sinaica.inecc.gob.mx/) (INECC). Se miden PM2.5, O3 y CO con umbrales de las normas oficiales mexicanas. GitHub Actions genera los datos horarios dentro del artefacto de GitHub Pages, sin hacer commits automáticos al repositorio.
 
 - Mapa de estaciones con lecturas de PM2.5
 - Barras horizontales por contaminante con indicadores de frescura
@@ -40,9 +40,21 @@ Datos trimestrales de la Secretaría de Economía (2006–2024) sobre inversión
 │       ├── dashboard.js  # Lógica de visualización SINAICA
 │       └── ied.js        # Lógica de visualización IED
 └── .github/workflows/
-    ├── fetch-sinaica.yml # Actualización horaria de datos SINAICA
-    └── deploy-pages.yml  # Deploy automático a GitHub Pages
+    └── deploy-pages.yml  # Build horario y deploy automático a GitHub Pages
 ```
+
+## Automatización
+
+El workflow `Build and deploy GitHub Pages` corre cada hora, restaura un cache
+efímero de Actions para `site/data/sinaica.json`, ejecuta
+`scripts/fetch_sinaica.py`, genera el JSON actualizado en el workspace de GitHub
+Actions y publica `site/` como artefacto de Pages. No escribe los datos horarios
+a `main`, así que la página se mantiene fresca sin inflar el historial de Git ni
+hacer que el repositorio aparezca como actualizado por commits de automatización.
+
+Los CSVs crudos de IED y el JSON horario de SINAICA son artefactos generados y
+están ignorados por Git. El sitio conserva `site/data/ied.json` porque es el
+dataset estático preprocesado que consume el dashboard de IED.
 
 ## Cómo usar
 

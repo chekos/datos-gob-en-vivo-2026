@@ -1,10 +1,15 @@
-name: Deploy to GitHub Pages
+name: Build and deploy GitHub Pages
 
 on:
+  schedule:
+    - cron: '15 * * * *'
+  workflow_dispatch:
   push:
     branches: [main]
-    paths: [site/**]
-  workflow_dispatch:
+    paths:
+      - ".github/workflows/deploy-pages.yml"
+      - "scripts/fetch_sinaica.py"
+      - "site/**"
 
 permissions:
   contents: read
@@ -23,6 +28,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: site/data/sinaica.json
+          key: sinaica-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            sinaica-
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Fetch live SINAICA data for artifact
+        run: uv run scripts/fetch_sinaica.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
